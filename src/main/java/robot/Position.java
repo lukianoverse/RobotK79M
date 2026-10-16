@@ -1,4 +1,6 @@
-record Position(int x, int y) {
+package robot;
+
+public record Position(int x, int y) {
     Position getUp() {
         return new Position(this.x, this.y + 1);
     }
@@ -13,5 +15,10 @@ record Position(int x, int y) {
 
     Position getLeft() {
         return new Position(this.x - 1, this.y);
+    }
+
+    @Override
+    public String toString() {
+        return "[%d, %d]".formatted(x, y);
     }
 }
